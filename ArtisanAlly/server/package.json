@@ -1,0 +1,6 @@
+"scripts": {
+  "dev": "ts-node-dev src/index.ts",
+  "build": "tsc",
+  "start": "node dist/index.js",
+  "render-build": "cd ../client && npm install && npm run build && cd ../server && npm install && npm run build"
+}
