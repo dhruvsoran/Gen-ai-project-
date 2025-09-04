@@ -8,6 +8,7 @@ import Home from "@/pages/home";
 import ArtisanSignup from "@/pages/artisan-signup";
 import ArtisanProfile from "@/pages/artisan-profile";
 import Discover from "@/pages/discover";
+import ArtisanDashboard from "@/pages/artisan-dashboard"; // ✅ import dashboard
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/artisan-signup" component={ArtisanSignup} />
       <Route path="/artisan/:id" component={ArtisanProfile} />
       <Route path="/discover" component={Discover} />
+      <Route path="/artisan-dashboard" component={ArtisanDashboard} /> {/* ✅ new */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -33,3 +35,4 @@ function App() {
 }
 
 export default App;
+
