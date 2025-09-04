@@ -76,12 +76,18 @@ export default function ArtisanSignup() {
       return response.json();
     },
     onSuccess: (artisan) => {
-      toast({
-        title: 'Profile Created!',
-        description: 'Welcome to Artisan Connect! Your profile has been created successfully.',
-      });
-      queryClient.invalidateQueries({ queryKey: ['/api/artisans'] });
-      setLocation(`/artisan/${artisan.id}`);
+  toast({
+    title: 'Profile Created!',
+    description: 'Welcome to Artisan Connect! Your profile has been created successfully.',
+  });
+
+  // Store artisan ID (or token, once backend provides it)
+  localStorage.setItem("artisanId", artisan.id);
+
+  // Redirect to dashboard instead of profile page
+  setLocation(`/artisan-dashboard`);
+},
+
     },
     onError: (error) => {
       toast({
