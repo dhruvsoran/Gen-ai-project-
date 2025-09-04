@@ -88,7 +88,6 @@ export default function ArtisanSignup() {
   setLocation(`/artisan-dashboard`);
 },
 
-    },
     onError: (error) => {
       toast({
         title: 'Signup Failed',
